@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+seaborn
+tqdm
+scikit-learn
+statsmodels
+joblib
+factor-analyzer
+openpyxl
+jupyter
+nbconvert

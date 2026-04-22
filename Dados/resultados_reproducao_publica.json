@@ -1,0 +1,39 @@
+{
+  "amostra": {
+    "n_imoveis": 571,
+    "n_observacoes": 2284,
+    "ocupacao_media_dias": 34.595446584938706
+  },
+  "pca": {
+    "kmo": 0.8816989859557294,
+    "bartlett_stat": 2116.691427670131,
+    "bartlett_p": 0.0,
+    "variancia_explicada": 0.647111021469792
+  },
+  "modelo_final": {
+    "tipo": "OLS",
+    "r2": 0.09975508877710515,
+    "mae_dias": 18.556775284111563,
+    "rmse_dias": 22.488204806248802
+  },
+  "cenario_estacionario": {
+    "ε-Greedy": 37223.673619989386,
+    "UCB": 40304.07925379537,
+    "Thompson Sampling": 35321.055990979505
+  },
+  "cenario_multi_estacao": {
+    "ε-Greedy": 27838.686872574057,
+    "UCB": 29671.277180128494,
+    "Thompson Sampling": 27159.07265973963
+  },
+  "figuras": [
+    "Histogramas Antes e depois.png",
+    "correlacao_subnotas.png",
+    "diagnostico_modelo_reduzido.png",
+    "curva_demanda_estimada.png",
+    "simulacao_mab_receita_estacionario.png",
+    "simulacao_mab_bracos_estacionario.png",
+    "simulacao_mab_receita_multi_estacao.png",
+    "heatmap_thompson_multi_estacao.png"
+  ]
+}

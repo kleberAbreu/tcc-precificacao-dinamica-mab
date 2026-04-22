@@ -2,7 +2,7 @@
 
 Repositório público de reprodução do TCC sobre precificação dinâmica de estúdios por temporada no Rio de Janeiro com algoritmos Multi-Armed Bandits.
 
-O material principal está no notebook [Dados/04_Reproducao_Publica_TCC.ipynb](Dados/04_Reproducao_Publica_TCC.ipynb), organizado para seguir a lógica final do trabalho e reproduzir os principais resultados, tabelas e figuras do estudo.
+O material principal está no notebook [Dados/reproducao_publica_tcc.ipynb](Dados/reproducao_publica_tcc.ipynb), organizado para seguir a lógica final do trabalho e reproduzir os principais resultados, tabelas e figuras do estudo.
 
 ## Visão Geral
 

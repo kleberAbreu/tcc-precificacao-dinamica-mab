@@ -31,9 +31,13 @@
     "correlacao_subnotas.png",
     "diagnostico_modelo_reduzido.png",
     "curva_demanda_estimada.png",
+    "curva_demanda_receita.png",
     "simulacao_mab_receita_estacionario.png",
     "simulacao_mab_bracos_estacionario.png",
+    "simulacao_mab_resultados.png",
     "simulacao_mab_receita_multi_estacao.png",
+    "simulacao_mab_multi_estacao.png",
     "heatmap_thompson_multi_estacao.png"
-  ]
+  ],
+  "validacao_tabela6": "validacao_tabela6.json"
 }

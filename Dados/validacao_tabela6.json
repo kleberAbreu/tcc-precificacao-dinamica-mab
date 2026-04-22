@@ -1,0 +1,5 @@
+{
+  "status": "inconsistente_no_manuscrito",
+  "diagnostico": "A Tabela 6 do trabalho não corresponde exatamente ao OLS reduzido nem ao MixedLM completo; ela mistura valores de especificações diferentes.",
+  "decisao_reprodutibilidade": "O notebook preserva os coeficientes efetivamente estimados; a inconsistência está no texto da tabela do manuscrito."
+}

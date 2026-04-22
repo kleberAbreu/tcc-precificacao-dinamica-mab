@@ -17,19 +17,12 @@ O pipeline público deste repositório:
 - compara OLS com Random Forest e Gradient Boosting;
 - simula `ε-Greedy`, `UCB` e `Thompson Sampling` em cenários estacionário e multi-estação.
 
-## Arquivos Principais
+## Acesso Rápido
 
-- [Dados/04_Reproducao_Publica_TCC.ipynb](Dados/04_Reproducao_Publica_TCC.ipynb): notebook principal de reprodução.
+- [Dados/reproducao_publica_tcc.ipynb](Dados/reproducao_publica_tcc.ipynb): notebook principal de reprodução.
 - [Dados/resultados_reproducao_publica.json](Dados/resultados_reproducao_publica.json): resumo numérico final gerado pelo notebook.
-
-## Conteúdo
-
-- `Dados/04_Reproducao_Publica_TCC.ipynb`: notebook principal de reprodução.
-- `Dados/listings_*.csv.gz` e `Dados/calendar_*.csv.gz`: dados brutos usados no pipeline.
 - `Dados/base_final_para_modelagem.csv`: base analítica final.
 - `Dados/modelo_ocupacao_final.pkl`: modelo OLS final exportado.
-- `Dados/resultados_reproducao_publica.json`: resumo numérico gerado pelo notebook.
-- `Dados/*.png`: figuras centrais reproduzidas no trabalho.
 
 ## Estrutura
 
@@ -38,7 +31,7 @@ O pipeline público deste repositório:
 ├── README.md
 ├── requirements.txt
 ├── Dados
-│   ├── 04_Reproducao_Publica_TCC.ipynb
+│   ├── reproducao_publica_tcc.ipynb
 │   ├── listings_*.csv.gz
 │   ├── calendar_*.csv.gz
 │   ├── base_final_para_modelagem.csv
@@ -62,7 +55,7 @@ pip install -r requirements.txt
 
 ### Opção 1: Jupyter
 
-1. Abra o notebook `Dados/04_Reproducao_Publica_TCC.ipynb`.
+1. Abra o notebook `Dados/reproducao_publica_tcc.ipynb`.
 2. Configure o diretório de execução para `Dados/`.
 3. Execute o notebook de ponta a ponta.
 
@@ -70,7 +63,7 @@ pip install -r requirements.txt
 
 ```bash
 cd Dados
-jupyter nbconvert --to notebook --execute 04_Reproducao_Publica_TCC.ipynb --output 04_Reproducao_Publica_TCC.executed.ipynb
+jupyter nbconvert --to notebook --execute reproducao_publica_tcc.ipynb --output reproducao_publica_tcc.executed.ipynb
 ```
 
 ## O Que Esperar da Reprodução

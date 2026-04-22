@@ -20,20 +20,16 @@ O pipeline público deste repositório:
 ## Arquivos Principais
 
 - [Dados/04_Reproducao_Publica_TCC.ipynb](Dados/04_Reproducao_Publica_TCC.ipynb): notebook principal de reprodução.
-- [Dados/tcc_referencia_final.pdf](Dados/tcc_referencia_final.pdf): texto final do TCC.
 - [Dados/resultados_reproducao_publica.json](Dados/resultados_reproducao_publica.json): resumo numérico final gerado pelo notebook.
 
 ## Conteúdo
 
 - `Dados/04_Reproducao_Publica_TCC.ipynb`: notebook principal de reprodução.
-- `Dados/tcc_referencia_final.pdf`: texto final do TCC.
 - `Dados/listings_*.csv.gz` e `Dados/calendar_*.csv.gz`: dados brutos usados no pipeline.
 - `Dados/base_final_para_modelagem.csv`: base analítica final.
 - `Dados/modelo_ocupacao_final.pkl`: modelo OLS final exportado.
 - `Dados/resultados_reproducao_publica.json`: resumo numérico gerado pelo notebook.
 - `Dados/*.png`: figuras centrais reproduzidas no trabalho.
-- `tools/create_public_notebook.py`: script que gera o notebook público.
-- `tools/validate_public_notebook.py`: script de validação automatizada.
 
 ## Estrutura
 
@@ -43,16 +39,12 @@ O pipeline público deste repositório:
 ├── requirements.txt
 ├── Dados
 │   ├── 04_Reproducao_Publica_TCC.ipynb
-│   ├── tcc_referencia_final.pdf
 │   ├── listings_*.csv.gz
 │   ├── calendar_*.csv.gz
 │   ├── base_final_para_modelagem.csv
 │   ├── modelo_ocupacao_final.pkl
 │   ├── resultados_reproducao_publica.json
 │   └── figuras geradas
-└── tools
-    ├── create_public_notebook.py
-    └── validate_public_notebook.py
 ```
 
 ## Requisitos
@@ -108,22 +100,6 @@ Resultados centrais esperados:
 - `simulacao_mab_receita_multi_estacao.png`
 - `heatmap_thompson_multi_estacao.png`
 - `resultados_reproducao_publica.json`
-
-## Validação
-
-Os scripts auxiliares em `tools/` permitem reconstruir e validar o notebook público:
-
-```bash
-python tools/create_public_notebook.py
-python tools/validate_public_notebook.py
-```
-
-O validador executa o notebook inteiro e verifica:
-
-- coerência da base final;
-- coerência do modelo final exportado;
-- geração do resumo numérico;
-- presença das figuras principais.
 
 ## Fonte dos dados
 

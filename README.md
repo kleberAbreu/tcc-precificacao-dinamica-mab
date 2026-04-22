@@ -2,7 +2,26 @@
 
 Repositório público de reprodução do TCC sobre precificação dinâmica de estúdios por temporada no Rio de Janeiro com algoritmos Multi-Armed Bandits.
 
-O material principal para reprodução está no notebook [Dados/04_Reproducao_Publica_TCC.ipynb](Dados/04_Reproducao_Publica_TCC.ipynb), organizado para seguir a lógica final do trabalho e gerar os principais resultados, tabelas e figuras.
+O material principal está no notebook [Dados/04_Reproducao_Publica_TCC.ipynb](Dados/04_Reproducao_Publica_TCC.ipynb), organizado para seguir a lógica final do trabalho e reproduzir os principais resultados, tabelas e figuras do estudo.
+
+## Visão Geral
+
+O trabalho investiga o uso de algoritmos Multi-Armed Bandits para precificação dinâmica de estúdios de aluguel por temporada. A análise utiliza dados públicos do Inside Airbnb para o Rio de Janeiro, com quatro snapshots trimestrais entre junho de 2024 e março de 2025.
+
+O pipeline público deste repositório:
+
+- reconstrói a amostra analítica a partir dos dados brutos;
+- gera a variável de ocupação trimestral prospectiva;
+- consolida indicadores de qualidade via PCA;
+- estima a função de demanda por OLS;
+- compara OLS com Random Forest e Gradient Boosting;
+- simula `ε-Greedy`, `UCB` e `Thompson Sampling` em cenários estacionário e multi-estação.
+
+## Arquivos Principais
+
+- [Dados/04_Reproducao_Publica_TCC.ipynb](Dados/04_Reproducao_Publica_TCC.ipynb): notebook principal de reprodução.
+- [Dados/tcc_referencia_final.pdf](Dados/tcc_referencia_final.pdf): texto final do TCC.
+- [Dados/resultados_reproducao_publica.json](Dados/resultados_reproducao_publica.json): resumo numérico final gerado pelo notebook.
 
 ## Conteúdo
 
@@ -36,36 +55,47 @@ O material principal para reprodução está no notebook [Dados/04_Reproducao_Pu
     └── validate_public_notebook.py
 ```
 
-## Como reproduzir
+## Requisitos
 
-1. Crie um ambiente Python 3.10+.
-2. Instale as dependências:
+- Python 3.10+
+- Jupyter Notebook ou JupyterLab
+
+Instalação das dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Abra o notebook `Dados/04_Reproducao_Publica_TCC.ipynb`.
-4. Execute o notebook de ponta a ponta com o diretório de trabalho apontando para `Dados/`.
+## Como Executar
 
-Opção via terminal:
+### Opção 1: Jupyter
+
+1. Abra o notebook `Dados/04_Reproducao_Publica_TCC.ipynb`.
+2. Configure o diretório de execução para `Dados/`.
+3. Execute o notebook de ponta a ponta.
+
+### Opção 2: terminal
 
 ```bash
 cd Dados
 jupyter nbconvert --to notebook --execute 04_Reproducao_Publica_TCC.ipynb --output 04_Reproducao_Publica_TCC.executed.ipynb
 ```
 
-## O que o notebook faz
+## O Que Esperar da Reprodução
 
-1. Lê os quatro snapshots trimestrais de `listings` e `calendar`.
-2. Reconstrói a amostra balanceada de 571 imóveis e 2.284 observações.
-3. Deriva a ocupação trimestral prospectiva.
-4. Aplica tratamento, winsorização, transformações logarítmicas e engenharia de variáveis.
-5. Consolida qualidade percebida por PCA.
-6. Treina o modelo final de demanda por OLS.
-7. Compara OLS com Random Forest e Gradient Boosting.
-8. Simula os algoritmos `ε-Greedy`, `UCB` e `Thompson Sampling` em dois cenários:
-   cenário estacionário e cenário multi-estação.
+- Amostra final de `571` imóveis e `2.284` observações.
+- Base final salva em `Dados/base_final_para_modelagem.csv`.
+- Modelo OLS final salvo em `Dados/modelo_ocupacao_final.pkl`.
+- Resumo final salvo em `Dados/resultados_reproducao_publica.json`.
+- Geração das principais figuras do trabalho.
+
+Resultados centrais esperados:
+
+- `R²` do modelo OLS final em torno de `0.10`.
+- Cenário estacionário:
+  `UCB` > `ε-Greedy` > `Thompson Sampling` em receita acumulada.
+- Cenário multi-estação:
+  `UCB` mantém maior receita absoluta, mas `Thompson Sampling` apresenta menor queda relativa entre cenários.
 
 ## Principais artefatos gerados
 
@@ -79,11 +109,27 @@ jupyter nbconvert --to notebook --execute 04_Reproducao_Publica_TCC.ipynb --outp
 - `heatmap_thompson_multi_estacao.png`
 - `resultados_reproducao_publica.json`
 
+## Validação
+
+Os scripts auxiliares em `tools/` permitem reconstruir e validar o notebook público:
+
+```bash
+python tools/create_public_notebook.py
+python tools/validate_public_notebook.py
+```
+
+O validador executa o notebook inteiro e verifica:
+
+- coerência da base final;
+- coerência do modelo final exportado;
+- geração do resumo numérico;
+- presença das figuras principais.
+
 ## Fonte dos dados
 
 Os dados brutos utilizados derivam do projeto Inside Airbnb para a cidade do Rio de Janeiro, com snapshots de junho/2024, setembro/2024, dezembro/2024 e março/2025.
 
-## Observações
+## Observações Sobre o Repositório
 
 - Os arquivos `reviews_*.csv.gz` não foram incluídos porque não são usados no pipeline final do notebook público.
 - O repositório mantém a base final e o modelo exportado para permitir auditoria dos resultados sem necessidade de rerodar todo o ETL.
